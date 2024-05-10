@@ -21,27 +21,35 @@ export default function TranslationForm() {
   };
 
   return (
-    <div className="flex items-center flex-col justify-center m-4 bg-white">
-      <h1 className="text-2xl font-bold mb-4">Legacy Migration</h1>
-      <form onSubmit={handleSubmit} className="w-1/2 mx-auto">
+    <div className="flex items-center flex-col justify-center m-4 mt-10 bg-white">
+      <h1 className="text-6xl font-bold mb-4">Legacy Migration</h1>
+      <form onSubmit={handleSubmit} className="w-1/2 mx-auto mt-10">
         <div className="flex flex-col items-center justify-center gap-8">
           <div>
-            <label htmlFor="githubLink" className="text-right block">
-              Upload your GitHub link:
-            </label>
-          </div>
-          <div>
-            <input
-              type="text"
-              id="githubLink"
-              value={githubLink}
-              onChange={(e) => setGithubLink(e.target.value)}
-              className="w-full rounded-md p-2 border border-gray-700"
-            />
+            <div>
+              <label
+                htmlFor="githubLink"
+                className="text-right  flex justify-center items-center"
+              >
+                Upload your GitHub link
+              </label>
+            </div>
+            <div>
+              <input
+                type="text"
+                id="githubLink"
+                value={githubLink}
+                onChange={(e) => setGithubLink(e.target.value)}
+                className="w-full rounded-md p-2 border border-gray-700"
+              />
+            </div>
           </div>
           <div className="flex flex-col lg:flex-row items-center justify-center">
             <div className="flex-grow pr-2">
-              <label htmlFor="sourceLang" className="block">
+              <label
+                htmlFor="sourceLang"
+                className="text-right  flex justify-center items-center"
+              >
                 Source language
               </label>
               <input
@@ -53,7 +61,10 @@ export default function TranslationForm() {
               />
             </div>
             <div className="flex-grow pl-2">
-              <label htmlFor="destLang" className="block text-right">
+              <label
+                htmlFor="destLang"
+                className="text-right  flex justify-center items-center"
+              >
                 Destination language
               </label>
               <input
@@ -65,10 +76,14 @@ export default function TranslationForm() {
               />
             </div>
           </div>
+
           <div className="flex flex-col lg:flex-row">
             <div className="flex-grow pr-2">
-              <label htmlFor="sourceDir" className="text-right block">
-                Source directory:
+              <label
+                htmlFor="sourceDir"
+                className="text-right  flex justify-center items-center"
+              >
+                Source directory
               </label>
               <input
                 type="text"
@@ -79,8 +94,11 @@ export default function TranslationForm() {
               />
             </div>
             <div className="flex-grow pl-2">
-              <label htmlFor="destDir" className="text-right block">
-                Destination directory:
+              <label
+                htmlFor="destDir"
+                className="text-right  flex justify-center items-center"
+              >
+                Destination directory
               </label>
               <input
                 type="text"
@@ -92,25 +110,32 @@ export default function TranslationForm() {
             </div>
           </div>
           <div>
-            <label htmlFor="specificGuidelines" className="text-right block">
-              Specific guidelines:
-            </label>
-          </div>
-          <div>
-            <textarea
-              id="specificGuidelines"
-              value={specificGuidelines}
-              onChange={(e) => setSpecificGuidelines(e.target.value)}
-              className="w-full rounded-md p-2 border border-gray-700"
-            ></textarea>
+            <div>
+              <label
+                htmlFor="specificGuidelines"
+                className="text-right  flex justify-center items-center"
+              >
+                Specific guidelines
+              </label>
+            </div>
+            <div>
+              <textarea
+                id="specificGuidelines"
+                value={specificGuidelines}
+                onChange={(e) => setSpecificGuidelines(e.target.value)}
+                className="w-full rounded-md p-2 border border-gray-700"
+              ></textarea>
+            </div>
           </div>
         </div>
-        <button
-          type="submit"
-          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md"
-        >
-          Submit
-        </button>
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
