@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import axios from 'axios';
 export default function TranslationForm() {
   const [githubLink, setGithubLink] = useState("");
   const [sourceLang, setSourceLang] = useState("");
@@ -8,17 +8,25 @@ export default function TranslationForm() {
   const [destDir, setDestDir] = useState("");
   const [specificGuidelines, setSpecificGuidelines] = useState("");
 
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log({
+    axios.post('samwin/idiot/endpoint', {
       githubLink,
       sourceLang,
       destLang,
       sourceDir,
       destDir,
       specificGuidelines,
+    })
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
     });
   };
+  
 
   return (
     <div className="flex flex-col items-center justify-center m-4 mt-10 bg-white rounded-lg  p-8">
